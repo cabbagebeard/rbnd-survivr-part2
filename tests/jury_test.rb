@@ -19,28 +19,28 @@ class TestJury < Minitest::Test
 
   #=====Remember to uncomment one test method at a time.=====
 
-  # def test_jury_starts_as_empty_array
-  #   jury = Jury.new
-  #   assert_empty jury.members
-  # end
-  #
-  # def test_cast_votes_returns_hash
-  #   assert_kind_of Hash, @jury.cast_votes(@finalists)
-  # end
-  #
-  # def test_cast_votes_hash_includes_two_finalists
-  #   @jury.members = @jury_members
-  #   assert_equal 2, @jury.cast_votes(@finalists).length
-  # end
-  #
-  # def test_cast_votes_every_member_vote_puts_to_terminal
-  #   @jury.members = @jury_members
-  #   output = capture_io do
-  #     @jury.cast_votes(@finalists)
-  #   end
-  #   output = output[0].split("\n").length
-  #   assert_equal 7, output
-  # end
+  def test_jury_starts_as_empty_array
+    jury = Jury.new
+    assert_empty jury.members
+  end
+  
+  def test_cast_votes_returns_hash
+    assert_kind_of Hash, @jury.cast_votes(@finalists)
+  end
+    
+  def test_cast_votes_hash_includes_two_finalists
+    @jury.members = @jury_members
+    assert_equal 2, @jury.cast_votes(@finalists).length
+  end
+  
+  def test_cast_votes_every_member_vote_puts_to_terminal
+    @jury.members = @jury_members
+    output = capture_io do
+    @jury.cast_votes(@finalists)
+  end
+    output = output[0].split("\n").length
+    assert_equal 7, output
+  end
   #
   # def test_cast_votes_total_votes_equals_seven
   #   total_votes = 0
