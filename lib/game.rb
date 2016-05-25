@@ -29,7 +29,7 @@ class Game
 	end
 
 	def individual_immunity_challenge
-		@tribes[0].members.sample
+		@tribes.first.members.sample
 	end
 	
 end
