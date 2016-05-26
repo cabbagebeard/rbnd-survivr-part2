@@ -25,7 +25,6 @@ class Jury
   
   def report_votes(votes)
     votes.each do |finalist, votes| 
-      puts "-  " * 8
       puts "#{finalist.to_s.capitalize}: #{votes.to_s}".yellow
     end
   end
