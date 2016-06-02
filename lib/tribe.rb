@@ -8,7 +8,8 @@ class Tribe
   end
 
   def tribal_council(immune: nil)
-    members.reject { |member| member == immune }.sample
+    eliminated_player = members.reject { |member| member == immune }.sample
+    @members.delete(eliminated_player)
   end
 
   def to_s
